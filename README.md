@@ -23,14 +23,5 @@ javascript for frontend
 db.sqlite3 for database management
 cloud hosting for web application hosting (Render Hosting)
 
-## Group Members
-
-Kashara Alvin Ssali       23/U/09144/PS      @KasharaAlvinSsali           alvinkashara20@gmail.com
-
-Kabogere Salimu           23/U/0459          @salimuloma                  salimuloma@gmail.com
-
-Nassali Catherine Laura   23/U/15495/PS      @nassali.catherine.laura     nassali.catherine.laura@gmail.com
-
-Luganzi Mathias Joseph    23/U/24122/PS      @Mathiasjoseph               mathiasjoseph250@gmail.com
-
-Katende Ronnie Magala     23/U/09239/PS      @trisholi                    katenderonnie045@gmail.com
+## created by
+Luganzi Mathias Joseph      @Mathiasjoseph     mathiasjoseph250@gmail.com
