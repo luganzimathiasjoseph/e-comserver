@@ -24,4 +24,4 @@ db.sqlite3 for database management
 cloud hosting for web application hosting (Render Hosting)
 
 ## created by
-Luganzi Mathias Joseph      @Mathiasjoseph     mathiasjoseph250@gmail.com
+Luganzi Mathias Joseph      @luganzimathiasjoseph     mathiasjoseph250@gmail.com
