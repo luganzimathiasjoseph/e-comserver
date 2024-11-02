@@ -1,0 +1,18 @@
+{% extends "business/businessmain.html" %}
+{% block content %}
+
+<p>Are you sure you want to delete?</p>
+{{product.imageURL}}
+<br>
+{{product.name}}
+{{product.price}}
+
+<form action='{% url 'business:deleteProduct' product.id %}'method ='POST'>
+    
+    {% csrf_token %}
+    <a href='{% url "business:dashboard" %}'>Cancel</a>
+
+    <input type='submit' name='Confirm'>
+</form>
+
+{% endblock %}

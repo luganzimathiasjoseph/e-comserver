@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color:bisque;
+              font-family: 'Poppins', sans-serif;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              margin: 0;
+          }
+          .container {
+              display: flex;
+              width: 80%;
+              max-width: 960px;
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+              border-radius: 6px;
+              overflow: hidden;
+              padding-bottom: 60px;
+          }
+          .details-section {
+              color:white;
+              border-radius:5px;
+              flex: 1;
+              background-color:blue;
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              
+          }
+          .form-section {
+              flex: 3;
+              padding: 20px;
+              background-color: #ffffff;
+          }
+          .form-section h2 {
+              color: #3e2093;
+              text-align: center;
+              margin-bottom: 20px;
+          }
+          .input-box input,
+          .input-box textarea {
+              width: 100%;
+              padding: 10px;
+              margin: 5px 0;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+          }
+          
+          .details-section div {
+              margin: 10px 0;
+          }
+          .details-section i {
+              margin-right: 10px;
+          }
+
+          @media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .details-section,
+    .form-section {
+        flex: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-section h2 {
+        font-size: 1.5em;
+    }
+
+    .button input[type="button"] {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+.backbutton {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    z-index: 9999; /* ensure it's above other elements */
+}
+
+.backbutton button {
+    font-size: larger;
+    color: white;
+    background-color:blue;
+} 
+
+
+.button input[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    margin-left: 140px;
+}
+
+.button input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+footer {
+    background-color: blue;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    bottom: 0;
+}
+
+    
+
+
+    </style>
+    
+</head>
+<body>   
+    <div class='backbutton'>
+        <button onclick="goBack()">Back</button>
+    </div>
+<div class="container"> 
+    <div class="form-section">
+        <h2>Get in Touch</h2>
+        <form action="{% url 'staff:contact' %}" method="post">
+            {% csrf_token %}
+            <!-- Dynamically add form fields here -->
+            <div class="input-box">
+                <label for="id_name"><strong>Name</strong></label>
+                <input type="text" id="id_name" name="{{ form.name.name }}" placeholder="Enter your name" required>
+            </div>
+            <div class="input-box">
+                <label for="id_email"><strong>Email</strong></label>
+                <input type="email" id="id_email" name="{{ form.email.name }}" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <label for="id_message"><strong>What can we help you with?</strong></label>
+                <textarea id="id_message" name="{{ form.message.name }}" placeholder="Enter your message" required></textarea>
+            </div>
+            <div class="button">
+                <input type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+    <div class="details-section">
+        <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span><strong>Kampala, Uganda</strong></span>
+        </div>
+        <div>
+            <i class="fas fa-phone-alt"></i>
+            <span><strong>+256 706 576 928</strong></span>
+        </div>
+        <div>
+            <i class="fas fa-envelope"></i>
+            <span><strong>ecomserver@gmail.com</strong></span>
+        </div>
+    </div>
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+<footer>
+    <p>Thank you for choosing EcomServer</p>
+</footer>
+</body>
+</html>
+

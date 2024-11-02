@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages</title>
+</head>
+<body>
+    <h1>Select the language</h1>
+    <form id="LanguageForm">
+        <label for="languages">Choose a language</label>
+        <select id="languages">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="ar">Arabic</option>
+            <option value="hi">Hindi</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+        </select>
+        <button type="submit">Go</button>
+    </form>
+    <hr>
+    <small>&copy; ecomserver 2024 All rights reserved</small>
+    <script>
+        document.getElementById('LanguageForm').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            var selectedLanguage = document.getElementById('languages').value;
+
+            var currentUrl = window.location.href;
+            var newUrl = currentUrl.split('?')[0] + '?lang=' + selectedLanguage;
+
+            window.location.href = newUrl;
+        });
+    </script>
+</body>
+</html>

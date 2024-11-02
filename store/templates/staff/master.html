@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/login_register.css' %}">
+
+    
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Your Title Here{% endblock %}</title>
+    
+</head>
+
+
+   
+<body>
+    <div class="container">
+        
+        {% block content %}
+ 
+        {% endblock %}
+    </div>
+
+   
+</body>
+</html>

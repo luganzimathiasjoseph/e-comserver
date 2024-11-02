@@ -1,0 +1,406 @@
+{% extends 'staff/master.html' %}
+{%block title%}Register{%endblock%}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        background: url('{% static "img\login.jpg" %}') no-repeat;/* for the image*/
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+    
+    }
+    .log a{
+        color: bisque;
+        padding-left: 20px;
+        margin-left: 20px;
+    }
+
+    .register{
+        
+        opacity: 0.9;
+        transform: translateX(-200px);
+    }
+    /* footer css */
+    .footer {
+    background-color: #3333336c;
+    color: bisque;
+    padding: 50px 0;
+    outline: none;
+}
+
+.container-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #cccccc;
+}
+
+
+        /* Media queries for responsiveness */
+
+@media only screen and (max-width: 767px) {
+    /* Styles for small devices (e.g., smartphones) */
+
+    .register {
+        transform: translateX(0); /* Reset translation for small devices */
+        margin: 0 auto; /* Center the wrapper horizontally */
+        width: 90%; /* Adjust width as needed */
+        max-width: 400px; /* Adjust max-width as needed */
+    }
+
+    .register h2 {
+            font-size: 22px;
+    }
+
+    .form-control {
+            padding: 8px;
+            font-size: 14px;
+    }
+
+    .submit-button {
+            padding: 8px;
+            font-size: 16px;
+    }
+
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .footer-col ul li a {
+        font-size: 14px;
+    }
+
+    .social-links a {
+        font-size: 20px;
+    }
+
+    small {
+        font-size: 12px;
+    }
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 574px) {
+        /* Styles for extra small devices (e.g., smaller smartphones) */
+        .register {
+            transform: translateX(0); /* Reset translation for extra small devices */
+            margin: 0 auto; /* Center the wrapper horizontally */
+            width: 90%; /* Adjust width as needed */
+            max-width: 300px; /* Adjust max-width as needed */
+        }
+        .register h2 {
+            font-size: 20px;
+        }
+
+        .form-control {
+            padding: 6px;
+            font-size: 12px;
+        }
+
+        .submit-button {
+            padding: 6px;
+            font-size: 14px;
+            margin: 1px;
+        }
+    
+
+    /* Footer styles */
+    .footer {
+        background-color: #3333336c;
+        color: bisque;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .container-footer {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-col {
+        width: 25%;
+        padding: 0 15px;
+    }
+
+    .footer-col h4 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    .footer-col ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .social-links a {
+        color: #fff;
+        font-size: 24px;
+        margin-right: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: #cccccc;
+    }
+
+    small {
+        font-size: 12px;
+    }
+
+    .custom-message {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    
+    .custom-message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    
+    .custom-message.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    
+    .custom-message.warning {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+    
+    .custom-message.info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+    }
+    
+
+}    
+
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav_bar.css' %}">
+<nav>
+    <ul>
+       <li><a href="{% url 'staff:homepage' %}">HOME</a></li>
+       <li><a href="{% url 'staff:about' %}">ABOUT US</a></li>
+       <li><a href="{% url 'staff:contact' %}">CONTACT US</a></li>
+        <li><a href="{% url 'staff:services' %}">SERVICES</a></li>
+        
+       <li style="float:right"> <a href="{% url 'staff:login'%}">LOGIN</a></li>
+       
+        <!-- Add other navigation links here -->
+       </ul>
+   </nav> 
+
+
+
+{% for message in messages %}
+<div class="custom-message {% if message.tags %}{{ message.tags }}{% endif %}">
+    {{ message }}
+</div>
+{% endfor %}
+
+<div class="register">
+
+    <h2>Register</h2>
+
+  
+
+                    
+    <form method="POST" autocomplete="on">
+        {% csrf_token %}
+                
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type ="text" id="username" name="username" class="form-control" required autocomplete="username" place holder='Username'>
+        </div>
+        <br>
+    
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" required autocomplete="email"  place holder='Email'>
+        </div>
+        <br>
+    
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" name="password1" class="form-control" required autocomplete="new-password"  place holder='Password'>
+        </div>
+        <br>
+    
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" id="password2" name="password2" class="form-control" required autocomplete="new-password">
+        </div>
+        <br>
+    
+        <div class="form-group">
+            <label for="usertype">User Type</label>
+            <select id="usertype" name="type" class="form-control" required autocomplete="on">
+                <option value="BUSINESS">Business</option>
+                <option value="CUSTOMER">Customer</option>
+            </select>
+        </div>
+        <br>
+        
+        
+        <input type="submit" value="Register" class="submit-button">
+    
+    </form>
+    
+    
+</div>
+
+{{form.errors}}
+
+<div class="log">
+    <p class = "text-align">Have an account?  <a href="{% url 'staff:login' %}"><strong>Login</strong></a></p>
+</div>
+
+<!-- footer -->
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="row">
+
+            
+            <div class="footer-col">
+                <h4>Ecomserver</h4>
+                <ul>
+                    <li><a href="{% url 'staff:about' %}">About Us</a></li>
+                    <li><a href="{% url 'staff:services' %}">Our Services</a></li>
+                    <li><a href="{% url 'staff:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="{% url 'staff:FAQS'%}">FAQ</a></li>
+                    <li><a href="{% url 'staff:returns'%}">Returns</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                    <li><a href='{% url "customer:category" 'Electronics' %}'>Electronics</a></li>
+                    <li><a href='{% url "customer:category" 'Clothes' %}'>Fashion</a></li>
+                    <li><a href='{% url "customer:category" 'Funiture' %}'>Furniture</a></li>
+                    <li><a href='{% url "customer:category" 'Bags' %}'>Bags</a></li>
+                    <li><a href='{% url "customer:category" 'Phones' %}'>Phones</a></li>
+                    <li><a href='{% url "customer:category" 'Groceries' %}'>Groceries</a></li>
+                    <li><a href='{% url "customer:category" 'Sports' %}'>Sports</a></li>
+                    <li><a href='{% url "customer:category" 'Health' %}'>Health</a></li>
+                    <li><a href='{% url "customer:category" 'Stationery' %}'>Stationary</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <small>&copy; 2024 Ecomserver.  <br>All rights reserved.</small>
+    </div>
+</footer>
+
+
+
+{% endblock %}

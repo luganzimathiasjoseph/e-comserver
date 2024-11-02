@@ -1,0 +1,35 @@
+{% extends "business/businessmain.html" %}
+{% block content %}
+<div class='row'>
+
+    <div class='col-md'>
+        <div class ='card card-body'>
+            <img src="{{ customer.profile.image.url }}" alt="Profile Image">
+        </div>
+    </div>
+    
+    <div class='col-md'>
+        <div class ='card card-body'>
+            <h5>Customer: {{customer.first_name}} {{customer.last_name}}</h5>
+            <h5>Customer: {{customer.username}}</h5>
+            <hr>
+            
+            <a class ='btn btn-outline-danger btn-sm btn-block' href=''>Delete Customer</a>
+        </div>
+    </div>
+
+    <div class='col-md'>
+        <div class ='card card-body'>
+            <h5>Contact Information</h5>
+            <hr>
+            <p>Email:  {{customer.email}} </p>
+            <p>Phone:  {{customer.profile.contact}} </p>
+            <p>Location: {{customer.profile.street}},  {{customer.profile.state}} </p>
+        </div>
+    </div>
+    
+</div>
+<br>
+
+
+{% endblock  %}

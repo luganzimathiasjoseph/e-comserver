@@ -1,0 +1,65 @@
+{% extends "business/businessmain.html" %}
+{% block content %}
+
+{% include "business/businessstatus.html" %}
+<div class = 'row'>
+    <div class = 'col-md-5'>
+        <h5>eCOMServer</h5>
+        <hr>
+        <div class ='card card-body'>
+            <a class= 'btn btn-primary bt-sm btn-block' href=''>Customer</a>
+            <table class= 'table table-sm'>
+                <tr>
+                    <th></th>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                </tr>
+
+                {% for customer in customers %}
+                  <tr>
+                    <td><a class= 'btn btn-sm btn-info'href ='{% url "business:businesscustomer" customer.id %}'>View</a></td>
+                    <td>{{customer.username}}</td>
+                    
+                    <td>{{customer.email}}</td>
+                  </tr>
+
+
+                {% endfor %}
+                
+            </table>
+        </div>
+    </div>
+
+    <div class= 'col-md-7'>
+        <h5>We are here to serve you</h5>
+        <hr>
+        <div class='card card-body'>
+            <a class= 'btn btn-primary bt-sm btn-block' href=''>Product Details</a>
+            <table class= 'table table-sm'>
+                <tr>
+                    
+                    <th>Product</th>
+                    <th>Price</th>
+                    
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+
+                {% for product in products %}
+                  <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    
+                    <td><a class= 'btn btn-sm btn-info' href='{% url 'business:updateProduct' product.id %}'>Update</a></td>
+                    <td><a class= 'btn btn-sm btn-danger'  href ='{% url 'business:deleteProduct' product.id %}'>Delete</a></td>
+                  </tr>
+
+
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock  %}

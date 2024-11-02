@@ -1,0 +1,227 @@
+/* styles.css */
+body{
+    background-color: #bbf1f9d6;
+}
+
+.circular-image {
+    width: 120px; /* Adjust as needed */
+    padding: 0px 0px;
+    border: 3px solid rgb(216, 181, 6); /* Changed border-style to border */
+    height: 120px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures the image stays within the circle */
+}
+
+.circular-image img {
+    width: 100%; /* Makes the image fill the circular container */
+    padding: 50px auto;
+    height: auto; /* Ensures aspect ratio is maintained */
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+}
+
+.large-text {
+    font-size: 19px; /* Adjust the size as needed */
+}
+
+.address-text {
+    font-size: 19px; /* Adjust the size as needed */
+}
+
+.bus-text {
+    font-size: 18px; /* Adjust the size as needed */
+}
+
+.account{
+    width: 650px; /* Adjust width as needed */
+    height: 670px; /* Adjust height as needed */
+    background-color: #bbf1f9; /* Example background color */
+    border-radius: 20px;
+    /* display: inline-block; Display elements inline */
+    padding: 10px 0px 20px 10px;
+    margin: 20px 50px 50px 250px; /* Adjust spacing between boxes */
+    border: 3px solid rgba(0, 170, 255, 0.126); /* Changed border-style to border */
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+   
+}
+
+.account_customer{
+    width: 650px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    background-color: #bbf1f9; /* Example background color */
+    border-radius: 20px;
+    /* display: inline-block; Display elements inline */
+    padding: 10px 0px 20px 10px;
+    margin: 60px 50px 50px 250px; /* Adjust spacing between boxes */
+    border: 3px solid rgba(0, 170, 255, 0.126); /* Changed border-style to border */
+    /* white-space: nowrap; */
+   
+}
+.account_user, .account_bus{
+    width: 580px; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 0px 10px 10px 10px;
+    margin: 20px 05px 05px 10px; /* Adjust spacing between boxes */
+    border: 3px transparent rgb(0, 170, 255); /* Changed border-style to border */
+    white-space: nowrap;
+
+}
+
+.account_info, .account_personal {
+    width: 270px; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 0px 10px 50px 30px;
+    margin: 0px 10px; /* Adjust spacing between boxes */
+    border: 3px transparent; /* Changed border-style to border */
+    white-space: nowrap;
+}
+
+
+.account_business, .account_address {
+    width: 270px; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 0px 10px 50px 30px;
+    margin: 0px 10px; /* Adjust spacing between boxes */
+    border: 3px transparent; /* Changed border-style to border */
+    white-space: wrap;
+   
+}
+
+.submit-account {
+    width: 20%;
+    height: 35px;
+    margin: 30px 0px 50px 250px; /* Adjust spacing between boxes */
+    background: bisque;
+    font-size: 18px; /* Increase the font size of the button */
+    padding: 0px 05px; /* Add some padding to the button */
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+.profile{
+    width: 250px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    background-color: #ccc; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 0px 10px 50px 50px;
+    margin: 0px 10px; /* Adjust spacing between boxes */
+    border: 3px solid rgb(0, 170, 255); /* Changed border-style to border */
+    white-space: nowrap;
+
+}
+
+.update{
+    width: 250px; /* Adjust width as needed */
+    height: 290px; /* Adjust height as needed */
+    background-color:  #bbf1f9;; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 20px 10px 50px 50px;
+    margin: 50px 450px auto; /* Adjust spacing between boxes */
+    border: 3px solid rgb(0, 170, 255); /* Changed border-style to border */
+  
+}
+
+.business{
+    width: 680px; /* Adjust width as needed */
+    height:590px; /* Adjust height as needed */
+    background-color: #bbf1f9; /* Example background color */
+    border-radius: 20px;
+    /* display: inline-block; Display elements inline */
+    padding: 30px 05px 50px 50px;
+    margin: 20px 50px 50px 250px; /* Adjust spacing between boxes */
+    border: 3px solid rgba(0, 170, 255, 0.126); /* Changed border-style to border */
+    /* white-space: nowrap; */
+   
+}
+
+.business1{
+    width: 270px; /* Adjust width as needed */
+    height: 490px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 15px 10px 50px 50px;
+    margin-right: 10px; /* Add space to the right of business1 */
+    border: 3px solid  rgb(111, 147, 165) ; /* Changed border-style to border */
+   
+}
+
+.business2{
+    width: 270px; /* Adjust width as needed */
+    height: 490px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 15px 10px 50px 50px;
+    margin-left: 20px; /* Add space to the left of business2 */
+    border: 3px solid rgb(111, 147, 165); /* Changed border-style to border */
+    white-space: wrap;
+   
+}
+
+.submit-button{
+    width: 10%;
+    height: 35px;
+    margin: 0px 0px 50px 250px; /* Adjust spacing between boxes */
+    background: bisque;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    
+  }
+
+
+
+  .customer{
+    width: 680px; /* Adjust width as needed */
+    height:440px; /* Adjust height as needed */
+    background-color: #bbf1f9; /* Example background color */
+    border-radius: 20px;
+    /* display: inline-block; Display elements inline */
+    padding: 30px 05px 50px 50px;
+    margin: 20px 50px 50px 250px; /* Adjust spacing between boxes */
+    border: 3px solid rgba(0, 170, 255, 0.126); /* Changed border-style to border */
+    /* white-space: nowrap; */
+}
+
+.customer1{
+    width: 270px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 15px 10px 50px 50px;
+    margin-right: 10px; /* Add space to the right of business1 */
+    border: 3px solid  rgb(111, 147, 165) ; /* Changed border-style to border */
+   
+}
+
+.customer2{
+    width: 270px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background-color: transparent; /* Example background color */
+    border-radius: 20px;
+    display: inline-block; /* Display elements inline */
+    padding: 15px 10px 50px 50px;
+    margin-left: 20px; /* Add space to the left of business2 */
+    border: 3px solid rgb(111, 147, 165); /* Changed border-style to border */
+    white-space: wrap;
+   
+}

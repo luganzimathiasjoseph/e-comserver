@@ -1,0 +1,55 @@
+{% extends 'business/businessmain.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-5">Business Product Upload Page</h1>
+
+    <form method="POST" action="{% url 'business:upload' %}" enctype="multipart/form-data" class="row g-3">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="id_name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="id_name" name="{{ form.name.name }}" placeholder="Enter your product name" required>
+        </div>
+        <div class="col-md-6">
+            <label for="id_price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="id_price" name="{{ form.price.name }}" placeholder="Enter your product price" required>
+        </div>
+        <br><br><br><br>
+        <div class="col-md-6">
+            <label for="id_category" class="form-label">Category</label>
+            <select class="form-control" id="id_category" name="{{ form.category.name }}" required>
+                <option value="{{ form.category.initial }}">{{ form.category.initial }}</option>
+                {% for category in form.category.field.queryset %}
+                    {% if category.name != form.category.initial %}
+                        <option value="{{ category.pk }}">{{ category.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <br><br><br><br>
+        <div class="col-md-6">
+            <label for="id_image" class="form-label">Image</label>
+            {{ form.image }}
+        </div>
+        <div class="col-12">
+            <label for="id_description" class="form-label">Description</label>
+            <textarea class="form-control" id="id_description" name="{{ form.description.name }}" placeholder="Enter your description" required></textarea>
+        </div>
+
+        <br> <br><br><br><br>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href='/business/dashboard'><button type="button" class="btn btn-secondary" onclick="goBack()">Back</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock %}

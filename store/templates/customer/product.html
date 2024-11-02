@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href={% static "css/dashboard.css"%}>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        
+        <div class='sidebar'>
+            <h1 class='logo'><img src='{% static "img/LOGO.JPG"%}'></h1>
+ 
+            <div class='sidebar-menu'>
+                <a href='{% url 'customer:dashboard'%}'><ion-icon name='storefront-outline'></ion-icon>Home</a>
+                <a href='{% url 'staff:contact'%}'><ion-icon name='chatbubbles-outline'></ion-icon>Contact Us</a>
+                <a href='{% url 'staff:about'%}'><ion-icon name="people-outline"></ion-icon>About Us</a>
+                <a href='{% url 'staff:web_settings'%}'><ion-icon name='Settings-outline'></ion-icon>Settings</a>
+                <a href='{% url 'staff:account'%}'><ion-icon name='person-outline'></ion-icon>Profile</a>
+            </div>
+            <div class='sidebar-logout'>
+                <a href='{% url 'staff:login'%}'><ion-icon name='log-out-outline'></ion-icon>Logout</a>
+            </div>
+        </div>
+        
+        <div class='main'>
+            <div class='main-navbar'>
+                <ion-icon class='menu-toggle' name='menu-outline'></ion-icon>
+                <form action='{% url 'customer:search' %}' method='GET'>
+                    <div class='search'>
+                        
+                        <input type='text'name = 'q' placeholder = 'What would you like' required>
+                        <button class='search-btn' type='submit'>Search</button>
+                        
+                    </div>
+                    </form>
+            
+                <div class='Profile'>
+                      
+                    <span id ='cart_quantity'><strong>{{cart|length}}</strong></span>
+                    <a class='user' href='{% url 'customer:cart_summary' %}'><ion-icon name='cart-outline'></ion-icon></a> 
+                </div>
+            </div>
+            <div class='main-highlight'>
+                <div class='main-header'>
+                    <h2 class='main-title'>Recommendations</h2>
+                </div>
+            </div>
+            
+        <div class='main-menus'>
+            <div class='main-filter'>
+            
+        </div>
+        
+        <div class='product-wrapper'>
+            <img class='product-img' src="{{product.imageURL}}" alt="Product image">
+            <div class='detail-desc'>
+              
+                <div class='product-desc'>
+                    <div class='product-name'>
+                        <h4>{{product.name}}</h4>
+                        <hr class='divider'>
+                        <p class='price'>shs. {{ product.price}}</p>
+                        <br>ID: {{product.id }}
+
+                        <div class = 'row justify-content-center'>
+                            <div class='col-md-2'>Quantity:</div>
+                            
+                                <select class="form-select form-select-small" id='qty-cart'>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                  </select>
+                                
+                            </div>
+                        </div>
+
+                        <p class='detail-sub'>{{product.description}}</p>
+                        
+
+                        
+                    </div>
+                    
+                    
+                    <div class='product-btn'>
+                        <a href="{% url "customer:dashboard"%}" ><button class ='pdt-btn'>Back</button></a>
+                        <a><button type='button' value="{{product.id}}" class ='pdt-btn' id='add-cart'>Add to cart</button></a>
+                        
+                        
+                       
+                    </div>
+                    
+                    
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script type='text/javascript' src="{% static 'js/app.js' %}"></script>
+        <script>
+            $(document).on('click','#add-cart', function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:'POST',
+                    url: '{% url "customer:cart_add" %}',
+                    data: {
+                        product_id:$('#add-cart').val(),
+                        product_qty: $('#qty-cart option:selected').text(),
+                        csrfmiddlewaretoken: "{{ csrf_token }}",
+                        action: 'post'
+                    },
+            
+                    success: function(json){
+                        console.log(json)
+                        document.getElementById('cart_quantity').textContent = json.qty
+                    },
+                    error: function(xhr, errmsg, err){
+            
+                    },
+            
+                });
+            
+            
+            
+            
+            
+            })
+        </script>
+    </body>
+</html>

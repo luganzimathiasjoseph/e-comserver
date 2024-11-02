@@ -1,0 +1,58 @@
+{%extends 'staff/master.html'%}
+{%load static%}
+
+    {%block title%}
+    ACCOUNT
+    {%endblock%}
+
+
+{%block content%}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav_bar.css' %}">
+<nav>
+    <ul>
+       <li><a href="{% url 'staff:homepage' %}">HOME</a></li>
+       <li><a href="{% url 'staff:about' %}">ABOUT US</a></li>
+       <li><a href="{% url 'staff:contact' %}">CONTACT US</a></li>
+        <li><a href="{% url 'staff:services' %}">SERVICES</a></li>
+       <li style="float:right"> <a href="{% url 'staff:account'%}">PROFILE</a></li>
+    </ul>
+</nav>
+
+<div class = 'account_customer'> 
+        <div class = "account_user">   
+        <div class="account_info">
+        <div class = "circular-image">
+        <img src="{{ profile.image.url }}" alt="Profile Image">
+        </div>
+        <br> 
+        <p class = 'address-text'>Email: {{ email }}</p>  <br>
+        <p class = 'address-text'>Name: {{ first_name }} {{ last_name }}</p>  <br>
+        <p class = 'address-text'>Username: {{username}}</p><br>
+        <p class = 'address-text'>Date of Birth: {{ profile.date_of_birth }}</p><br>
+        <p class = 'address-text'>Gender: {{ profile.gender }}</p><br>
+        </div>
+
+        
+        <div class="account_personal">  
+        <p><font size = '12' color = 'orange'>Personal</font></p><br>
+        <p class = 'large-text'>Gender: {{ profile.gender }}</p><br>
+        <p class = 'large-text'>Contact: {{ profile.contact }}</p><br>
+        <p class = 'large-text'>Zip Code: {{ profile.zip_code }}</p><br>
+        <p class = 'large-text'>Address Line 1: {{ profile.address_line_1 }}</p><br>
+        <p class = 'large-text'>Address Line 2: {{ profile.address_line_2 }}</p><br>
+        <p class = 'large-text'>Street: {{ profile.street }}</p><br>
+        <p class = 'large-text'>State: {{ profile.state }}</p><br>
+        </div>
+        </div>
+    
+<a href="{% url 'staff:update_user' %}"><button type="submit"  class = "submit-account">Edit Profile</button></a>
+</div>
+{%endblock%}
+
+
+
+
+       
+
+       

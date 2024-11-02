@@ -1,0 +1,292 @@
+
+{% load static  %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            padding: 20;
+            /* background-image: url('{% static "img\4.jpg" %}'); */
+            background-color: #fff;
+            /* background-color: black; */
+
+        }
+
+        .services-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            /* background-image: url('{% static "img\4.jpg" %}'); */
+            background-size: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* color: black; */
+        }
+
+        .service-category {
+            margin-bottom: 20px;
+        }
+
+        .service-category h2 {
+            margin-top: 0;
+            color: black;
+        }
+
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+            
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+            
+        }
+
+        .service-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-list li h3 {
+            margin-top: 0;
+            color: orange;
+        }
+
+        .service-list li p {
+            margin-top: 5px;
+            color:#007bff ;
+        }
+
+        .service-list li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .service-list li a:hover {
+            text-decoration: underline;
+        }
+        /* footer css */
+    .footer {
+    background-color: #3333336c;
+    color: bisque;
+    padding: 50px 0;
+    outline: none;
+}
+
+.container-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #cccccc;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .services-container {
+        max-width: 100%;
+    }
+    
+    .service-list li {
+        margin-bottom: 5px;
+    }
+    
+    .footer-col {
+        width: 50%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="services-container">
+    <h1>Ecomserver Services</h1>
+    <div class="service-category">
+        <h2>SHOPPING EXPERIENCE</h2>
+        <ul class="service-list">
+            <li>
+                <h3>Online Shopping</h3>
+                <p>Explore a wide range of products and purchase online.</p>
+            </li>
+            <li>
+                <h3>Product Search</h3>
+                <p>Efficiently find products using search functionality and filters.</p>
+            </li>
+            <li>
+                <h3>Shopping cart</h3>
+                <p>Add products you want to purchase to your virtual shopping cart for later review and checkout.</p>
+            </li>
+            <li>
+                <h3>Checkout Process</h3>
+                <p>Secure and streamlined checkout process to complete your purchases. <br> This usually includes providing shipping information, selecting a payment method, and confirming the order.</p>
+            </li>
+            <li>
+                <h3>Payment Gateaway Integration</h3>
+                <p>Integration with various payment gateways to facilitate secure online payments <br>Allows use of credit/debit cards, digital wallets, bank transfers</p>
+            </li>
+            
+        </ul>
+    </div>
+
+    <div class="service-category">
+        <h2>CUSTOMER SUPPORT</h2>
+        <ul class="service-list">
+            <li>
+                <h3>User Accounts</h3>
+                <p>Create accounts to manage orders and view order history.</p>
+            </li>
+            <li>
+                <h3>Secure Checkout</h3>
+                <p>Ensure secure payment processing with various payment methods.</p>
+            </li>
+            <li>
+                <h3>Order Tracking</h3>
+                <p>Track the status of your orders, including order confirmation, processing, shipping, and delivery.</p>
+            </li>
+            
+            <li>
+                <h3>Wishlist</h3>
+                <p>Add products to a wishlist for future purchase or sharing with others.</p>
+            </li>
+            <li>
+                <h3>Product Reviews and Ratings</h3>
+                <p>Read and write reviews and ratings for products, helping other shoppers make informed decisions.</p>
+            </li>
+            <li>
+                <h3>Customer Support</h3>
+                <p>Providing various channels for customer support such as email support, FAQs, and helplines to assist users with inquiries, issues, or returns.</p>
+            </li>
+            <li>
+                <h3>Promotions and Discounts</h3>
+                <p>Offering discounts, coupons, promotional offers, and loyalty programs to attrac and encourage repeat purchases.</p>
+            </li>
+
+            
+        </ul>
+    </div>
+
+    
+
+</div>
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="row">
+
+            
+            <div class="footer-col">
+                <h4>Ecomserver</h4>
+                <ul>
+                    <li><a href="{% url 'staff:about' %}">About Us</a></li>
+                    <li><a href="{% url 'staff:services' %}">Our Services</a></li>
+                    {% comment %} <li><a href="{% url 'privacy_policy' %}">Privacy Policy</a></li> {% endcomment %}
+                    <li><a href="{% url 'staff:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="{% url 'staff:FAQS' %}">FAQ</a></li>
+                    <li><a href="{% url 'staff:returns' %}">Returns</a></li>
+                    <li><a href="{% url 'staff:paymentoptions' %}">Payment Options</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                    <li><a href='{% url "customer:category" 'Electronics' %}'>Electronics</a></li>
+                    <li><a href='{% url "customer:category" 'Clothes' %}'>Fashion</a></li>
+                    <li><a href='{% url "customer:category" 'Funiture' %}'>Furniture</a></li>
+                    <li><a href='{% url "customer:category" 'Bags' %}'>Bags</a></li>
+                    <li><a href='{% url "customer:category" 'Phones' %}'>Phones</a></li>
+                    <li><a href='{% url "customer:category" 'Groceries' %}'>Groceries</a></li>
+                    <li><a href='{% url "customer:category" 'Sports' %}'>Sports</a></li>
+                    <li><a href='{% url "customer:category" 'Health' %}'>Health</a></li>
+                    <li><a href='{% url "customer:category" 'Stationery' %}'>Stationary</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558755650177"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <small>&copy; 2024 Ecomserver.  <br>All rights reserved.</small>
+    </div>
+</footer>
+</body>
+</html>
+
+
+  
+{% endblock content %}

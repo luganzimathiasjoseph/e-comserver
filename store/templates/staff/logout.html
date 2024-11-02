@@ -1,0 +1,10 @@
+{% extends 'staff/master.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="logout-button">Logout</button>
+  </form>
+
+  {% endblock %}

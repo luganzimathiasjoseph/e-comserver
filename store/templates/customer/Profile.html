@@ -1,0 +1,65 @@
+{% extends "staff/master.html" %}
+{% load static %}
+
+
+{%block title%} Profile {%endblock%}
+
+{% block content %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav_bar.css' %}">
+<nav>
+    <ul>
+       <li><a href="{% url 'customer:dashboard' %}">HOME</a></li>
+       <li><a href="{% url 'staff:about' %}">ABOUT US</a></li>
+       <li><a href="{% url 'staff:contact' %}">CONTACT US</a></li>
+        <li><a href="{% url 'staff:services' %}">SERVICES</a></li>
+       <li style="float:right"> <a href="{% url 'staff:account'%}">PROFILE</a></li>
+    </ul>
+</nav>
+
+
+<div class = 'customer'>
+<div class = 'customer1'>
+<form method="post" action="{% url 'customer:profile' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class = 'circular-image'>
+    {{ form.non_field_errors }}
+    {% if user.profile.image %}
+        <img src="{{ user.profile.image.url }}" alt="Profile Image">
+    {% endif %}
+    {{ form.image }} 
+    </div> 
+    <label for="id_image">Upload Photo:</label> 
+    <input type="file" id="id_image" name="image" accept="image/*">
+    <br></br>
+    <label for="id_gender">Gender:</label>
+    {{ form.gender }}
+    <br></br>
+    <label for="id_contact">Contact:</label> 
+    {{ form.contact }}
+    <br></br>
+</div>
+    <div class = 'customer2'>
+    <label for="id_address_liane_1">Address Line 1:</label>
+    {{ form.address_line_1 }}
+    <br></br>
+    <label for="id_address_liane_2">Address Line 2:</label>
+    {{ form.address_line_2 }}
+    <br></br>
+    <label for="id_street">Street:</label>
+    {{ form.street }}
+    <br></br>
+    <label for="id_state">State:</label>
+    {{ form.state }}
+    <br></br>
+    <label for="id_zip_code">Zip_Code:</label>
+    {{ form.zip_code }}
+    <br></br>
+</div>
+<br></br>
+<button type="submit" class = 'submit-button'>Save</button>
+
+</form>
+
+</div>
+
+{% endblock %}

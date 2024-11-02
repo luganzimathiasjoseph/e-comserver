@@ -1,0 +1,31 @@
+nav {
+    background-color: rgba(255, 166, 0, 0.785); /* Background color of the navigation bar */
+    width: 100%; /* Make the navigation bar span the entire width of the page */
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0px 5px 50px; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    
+}
+
+li {
+    float: left;
+  }
+
+nav ul li {
+    display: inline; /* Display list items horizontally */
+}
+
+nav ul li a {
+    display: block;
+    padding: 1em; /* Add padding to make the links clickable */
+    color: white; /* Text color of the links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Change background color on hover */
+}

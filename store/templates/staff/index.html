@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page | e-COMServer</title>
+</head>
+<style>
+    *{
+        margin: 10;
+        padding: 0;
+        box-sizing: none;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url('{% static 'C:\Users\hp\OneDrive\Desktop\django\Ecom\static\img\download4.jpg' %}');
+       
+        background-size: cover;
+        background-position: 50% 50%;
+        background-attachment: fixed;
+        
+    
+    }
+    
+    .pixelated{
+        image-rendering: pixelated;
+        -ms-interpolation-mode: nearest-neighbor;
+    }
+    .wrapper{
+        width: 4200px;
+        height:500px;
+        border: 2px solid whitesmoke;
+        backdrop-filter: blur(10px);
+        background: transparent;
+        color: white;
+        border-radius: 12px;
+        padding: 30px 40px;
+        
+    }
+    .h1{
+        font-size: 40px;
+        text-align: center;
+        color: orange;
+    }
+    .btn{
+        width: 30%;
+        height: 40px;
+        margin: 30px 120px;
+        background: white;
+        border: none;
+        outline: none;
+        border-radius: 100px;
+        box-shadow: 0 0 10px rgb(0, 0, 0, 1);
+        cursor: pointer;
+        font-size: 20px;
+        color: blue;
+        font-weight: 600;
+        position: relative;
+    }
+    .register-link{
+        font-size: 20px;
+        text-align:  right;
+        margin: 20px 0 15px;
+        height: 60px;
+        width: 80%;
+        position: relative;
+    }
+    
+    .register-link p a{
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .register-link p a:hover{
+        text-decoration: underline;
+    }
+    
+</style>
+
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1 class="h1">e-COMServer</h1>
+
+            
+
+            <button type="submit" class="btn">Create a Business</button>
+            <button type="submit" class="btn">Make Orders</button>
+
+            <div class="register-link">
+                <p><a href="staff:register">Back</a></p>
+              
+            </div>
+        </body>
+        </html>

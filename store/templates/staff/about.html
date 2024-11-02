@@ -1,0 +1,326 @@
+
+{% extends "staff/master.html" %}
+
+{%block title%}ABOUT{% endblock %}
+{% load static %}
+{%block content%}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Ecomserver</title>
+
+    <style>
+         body{
+        background: url('{% static "img\login.jpg" %}') no-repeat;/* for the image*/
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+    
+    }
+
+    .about_it{
+            font-style: italic;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            color: bisque;
+            text-decoration: none;
+            padding: 20px;
+
+        }
+
+        .welcome{
+            font-family: sans-serif;
+            padding: 10px;
+            margin-right: 500px;
+            color: white;
+            line-height: 2;
+
+
+        }
+
+        /* footer css */
+    .footer {
+    background-color: #3333336c;
+    color: bisque;
+    padding: 50px 0;
+    outline: none;
+}
+
+.container-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #cccccc;
+}
+
+/* Media queries for responsiveness */
+
+/* Styles for smartphones */
+@media only screen and (max-width: 767px) {
+    .welcome {
+        margin-right: 10px; /* Adjusted margin for smaller screens */
+        line-height: 1.2; /* Adjusted line height for smaller screens */
+    }
+
+    .footer-col {
+        width: 50%; /* Adjusted width for smaller screens */
+    }
+
+    .footer-col h4 {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    .footer-col ul li a {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+    }
+
+    .social-links a {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Styles for smaller smartphones */
+@media only screen and (max-width: 574px) {
+    .welcome {
+        margin-right: 5px; /* Further adjusted margin for even smaller screens */
+    }
+
+    .footer-col {
+        width: 100%; /* Adjusted width for even smaller screens */
+    }
+
+    .footer-col h4 {
+        font-size: 12px; /* Further adjusted font size for even smaller screens */
+    }
+
+    .footer-col ul li a {
+        font-size: 10px; /* Further adjusted font size for even smaller screens */
+    }
+
+    .social-links a {
+        font-size: 14px; /* Further adjusted font size for even smaller screens */
+    }
+}
+
+.hidden{
+    display: none;
+}
+.show-more{
+    color: blue;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 20px;
+}
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav_bar.css' %}">
+    <nav>
+        <ul>
+           <li><a href="{% url 'staff:homepage' %}">HOME</a></li>
+           <li><a href="{% url 'staff:about' %}">ABOUT US</a></li>
+           <li><a href="{% url 'staff:contact' %}">CONTACT US</a></li>
+            <li><a href="{% url 'staff:services' %}">SERVICES</a></li>
+        </ul>
+    </nav>  
+
+
+
+<div class = 'about_it'>
+    <h1>Welcome To e-COM Server</h1>
+</div>
+
+<div class="welcome">
+    <p>At e-COM Server we're more than just an online marketplace, we're a passionate team of innovators dedicated to revolutionizing the way you shop and connect with the products you love.</p>
+    <p>Our journey began with a shared vision among five driven individuals: Salimu Kabogere, Mathias Luganzi, Kashara Alvin Ssali, Ronnie Katende, and Nassali Catherine.</p>
+    <p>Fuelled by our collective ambition and a commitment to excellence, we embarked on a mission to create a platform that redefines the e-commerce experience.</p>
+
+</div>
+
+
+
+<div class = 'about_it'>
+    <h1>Our Story</h1>
+</div>
+
+<div class="welcome">
+    <p>In 2024, our founders came together with a common goal: </p>
+    <p><strong>To build a platform that seamlessly bridges the gap between consumers and the products they desire. </strong></p>
+    <p>Inspired by our diverse backgrounds and shared entrepreneurial spirit, we set out to transform this vision into reality. </p>
+    <p>From late-night brainstorming sessions to overcoming countless hurdles, our journey has been nothing short of exhilarating.</p>
+    <p>At e-comServer we're guided by a steadfast commitment to integrity, innovation, and customer satisfaction. </p>
+
+</div>
+
+
+<div class = 'about_it'>
+    <h1>Mission</h1>
+</div>
+
+<div class="welcome">
+    <p>Our mission is simple yet profound:</p>
+    <p><strong>To empower individuals and businesses alike by providing a platform that simplifies the shopping experience, fosters community engagement, and celebrates diversity. </strong></p>
+
+</div>
+
+<div class="hidden">
+    <div class = 'about_it'>
+        <h1>Values</h1>
+    </div>
+    
+    <div class="welcome">
+        <p>Every decision we make is rooted in these core values, driving us to continuously raise the bar and exceed expectations.</p>
+    
+    </div>
+    
+    <div class = 'about_it'>
+        <h1>Team</h1>
+    </div>
+    
+    <div class="welcome">
+        <p>Salimu: The Visionary Leader, Dynamic Innovator</p>
+        <p>Catherine: The Visionary Leader, Dynamic Innovator</p>
+        <p>Ronnie: The Visionary Leader, Dynamic Innovator</p>
+        <p>Ssali: The Visionary Leader, Dynamic Innovator</p>
+        <p>Mathias: The Visionary Leader, Dynamic Innovator</p>
+    </div>
+    
+    
+    <div class = 'about_it'>
+        <h1>Our Promise</h1>
+    </div>
+    
+    <div class="welcome">
+        <p>At e-comServer, our journey is just beginning. As we continue to evolve and grow, one thing remains constant</p>
+        <p>Our unwavering commitment to delivering an exceptional shopping experience that empowers and inspires.</p>
+        <p>Join us on this exciting adventure, and let's redefine e-commerce together.</p>
+    </div>
+    
+</div>
+
+<p class="show-more" onclick="toggle()">Read more....</p>
+
+
+
+
+<!-- footer -->
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="row">
+
+            
+            <div class="footer-col">
+                <h4>Ecomserver</h4>
+                <ul>
+                    <li><a href="{% url 'staff:about' %}">About Us</a></li>
+                    <li><a href="{% url 'staff:services' %}">Our Services</a></li>
+                   
+                    <li><a href="{% url 'staff:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="/FAQS">FAQ</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                    <li><a href='{% url "customer:category" 'Electronics' %}'>Electronics</a></li>
+                    <li><a href='{% url "customer:category" 'Clothes' %}'>Fashion</a></li>
+                    <li><a href='{% url "customer:category" 'Funiture' %}'>Furniture</a></li>
+                    <li><a href='{% url "customer:category" 'Bags' %}'>Bags</a></li>
+                    <li><a href='{% url "customer:category" 'Phones' %}'>Phones</a></li>
+                    <li><a href='{% url "customer:category" 'Groceries' %}'>Groceries</a></li>
+                    <li><a href='{% url "customer:category" 'Sports' %}'>Sports</a></li>
+                    <li><a href='{% url "customer:category" 'Health' %}'>Health</a></li>
+                    <li><a href='{% url "customer:category" 'Stationery' %}'>Stationary</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558755650177"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <small>&copy; 2024 Ecomserver.  <br>All rights reserved.</small>
+    </div>
+</footer>
+
+<script>
+    function toggle() {
+        var hiddenContent= document.querySelector('.hidden');
+        var showMoreText =document.querySelector('.show-more');
+
+        if (hiddenContent.style.display==='none'){
+            hiddenContent.style.display= 'block';
+            showMoreText.textContent='Read less....';
+        }else{
+            hiddenContent.style.display='none';
+            showMoreText.textContent='Read more....';
+        }
+    }
+</script>
+{%endblock%}

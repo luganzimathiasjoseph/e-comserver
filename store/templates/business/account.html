@@ -1,0 +1,87 @@
+{%extends 'staff/master.html'%}
+{%load static%}
+
+    {%block title%}
+    ACCOUNT
+    {%endblock%}
+
+
+{%block content%}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav_bar.css' %}">
+<nav>
+    <ul>
+       <li><a href="{% url 'business:dashboard' %}">HOME</a></li>
+       <li><a href="{% url 'staff:about' %}">ABOUT US</a></li>
+       <li><a href="{% url 'staff:contact' %}">CONTACT US</a></li>
+        <li><a href="{% url 'staff:services' %}">SERVICES</a></li>
+       <li style="float:right"> <a href="{% url 'staff:account'%}">PROFILE</a></li>
+    </ul>
+</nav>
+
+<div class = 'account'> 
+        <div class = "account_user">    
+        <div class="account_info">
+        
+        <div class = "circular-image">
+        <img src="{{ profile.image.url }}" alt="Profile Image">
+        </div>
+        <br>
+        <p class="address-text">Email: {{ email }}</p>
+        <br>
+        <p class="address-text">Name: {{ first_name }} {{ last_name }}</p>
+        <br>
+        <p class="address-text">Username: {{username}}</p>
+        </div>
+
+        
+        <div class="account_personal">  
+        <p><font size = '9' color = 'orange'>Personal</font></p>
+      
+        <p class="large-text">Date of Birth: {{ profile.date_of_birth }}</p>
+        <br>
+        <p class="large-text">Gender: {{ profile.gender }}</p>
+        <br>
+        <p class="large-text">Contact: {{ profile.contact }}</p>
+        <br>
+        <p class="large-text">Telephone: {{ profile.telephone }}</p>
+        <br>
+        <p class="large-text">Zip Code: {{ profile.zip_code }}</p>
+        </div>
+        </div>
+        
+        <div class = "account_bus">
+        <div class="account_business">  
+        <p><font size = '6' color = 'orange'>Business Info</font></p>
+        <br>
+        <p class="bus-text">Business Name: {{ profile.business_name }}</p>
+        <br>
+        <p class="bus-text">Website: {{ profile.website }}</p>
+        <br>
+        <p class="bus-text">Category: {{ profile.category }}</p>
+        <br>
+        <p class="bus-text">Bio: {{ profile.bio}}</p>
+        </div>
+
+        <div class = "account_address ">
+        <p><font size = '14' color = 'orange'>Address</font></p>
+        <p class="address-text">Address Line 1: {{ profile.address_line_1 }}</p>
+        <br>
+        <p class="address-text">Address Line 2: {{ profile.address_line_2 }}</p>
+        <br>
+        <p class="address-text">P.O. Box: {{ profile.pobox }}</p>
+        <br>
+        <p class="address-text">Street: {{ profile.street }}</p>
+        <br>
+        <p class="address-text">State: {{ profile.state }}</p>
+        </div>
+        </div>
+    
+    <a href="{% url 'staff:update_user' %}"><button type="submit"  class = "submit-account">Edit Profile</button></a>
+</div>
+{%endblock%}
+
+
+       
+
+       
